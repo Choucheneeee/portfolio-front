@@ -1,41 +1,29 @@
 'use client';
 
-import { useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-const projects = [
-	{
-		title: "Portfolio Website",
-		description:
-			"Built a secure Portail Rh platform with JWT role-based access, automated PDF generation, and workflows for leave, training, and loans.",
-		image: "/image/portfolio.png",
-		link: "https://your-portfolio-link.com",
-		tags: ["Next.js", "Tailwind", "Framer Motion"],
-		slug: "portfolio-website",
-	},
-	{
-		title: "Dashboard Analytics",
-		description:
-			"A real-time analytics dashboard with custom charts and authentication.",
-		image: "/image/dashboard.png",
-		link: "https://your-dashboard-link.com",
-		tags: ["React", "Node.js", "Socket.io"],
-		slug: "dashboard-analytics",
-	},
-	{
-		title: "DevOps Automation",
-		description:
-			"CI/CD pipelines and infrastructure as code for scalable deployments.",
-		image: "/image/devops.png",
-		link: "https://your-devops-link.com",
-		tags: ["Docker", "Kubernetes", "Jenkins"],
-		slug: "devops-automation",
-	},
-];
+type Project = {
+	slug: string;
+	title: string;
+	description: string;
+	image: string;
+	tags: string[];
+	liveDemo?: string;
+	github?: string;
+	features?: string[];
+};
 
 export default function ProjectSection() {
+	const [projects, setProjects] = useState<Project[]>([]);
 	const [hovered, setHovered] = useState<number | null>(null);
 	const router = useRouter();
+
+	useEffect(() => {
+		fetch("/database.json")
+			.then((res) => res.json())
+			.then((data) => setProjects(data));
+	}, []);
 
 	return (
 		<section
@@ -45,10 +33,23 @@ export default function ProjectSection() {
 			<h1 className="text-4xl font-extrabold text-white mb-12 tracking-tight">
 				My Projects
 			</h1>
+
+			{/* NB Section */}
+			<div className="mb-8 w-full max-w-4xl">
+				<div className="bg-[#112240] border-l-4 border-[#64FFDA] rounded-lg p-4 shadow text-[#bfc9d9]">
+					<strong>NB:</strong> It is recommended to{" "}
+					<span className="text-[#64FFDA] font-semibold">
+						clone or fork
+					</span>{" "}
+					the project and try them locally because there can be API key issues
+					or approval needed. Thank you for your comprehension.
+				</div>
+			</div>
+
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-6xl">
 				{projects.map((project, idx) => (
 					<div
-						key={project.title}
+						key={project.slug}
 						className="group relative rounded-2xl overflow-hidden shadow-xl bg-[#112240] border border-[#233554] hover:border-[#64FFDA] transition-all duration-300"
 						onMouseEnter={() => setHovered(idx)}
 						onMouseLeave={() => setHovered(null)}
@@ -89,20 +90,21 @@ export default function ProjectSection() {
 								))}
 							</div>
 							<div className="flex gap-2">
-								<a
-									href={project.link}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="px-4 py-2 rounded bg-[#64FFDA] text-[#0A192F] font-bold text-sm shadow hover:bg-[#52e0c4] transition-colors"
-								>
-									Live Demo
-								</a>
+								{project.liveDemo && (
+									<a
+										href={project.liveDemo}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="px-4 py-2 rounded bg-[#64FFDA] text-[#0A192F] font-bold text-sm shadow hover:bg-[#52e0c4] transition-colors"
+									>
+										Live Demo
+									</a>
+								)}
 								<button
 									onClick={() => router.push(`/projects/${project.slug}`)}
 									className="px-4 py-2 rounded border border-[#64FFDA] text-[#64FFDA] font-bold text-sm hover:bg-[#64FFDA22] transition-colors"
 								>
 									View Details
-                  
 								</button>
 							</div>
 						</div>

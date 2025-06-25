@@ -5,6 +5,7 @@ import GooeyNav from "./GooeyNav";
 const items = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#project" },
   { label: "Skills", href: "#skills" },
   { label: "Feedback", href: "#feed" },

@@ -1,0 +1,76 @@
+[
+  {
+    "slug": "Weather-Wise",
+    "title": "Weather Website",
+    "description": " WeatherWise is a user-friendly weather application designed to provide accurate and up-to-date weather forecasts.",
+    "image": "/image/weather.png",
+    "tags": ["React"],
+    "liveDemo": "https://weather-wise-ten-chi.vercel.app/",
+    "github": "https://github.com/Choucheneeee/WeatherWise-2.0",
+    "features": [
+      "Animated transitions",
+      "Responsive design"
+    ]
+  },
+  {
+    "slug": "Canvas-Edit-Pro",
+    "title": "CanvasEditPro",
+    "description": "CanvasEditPro is a simple yet powerful canvas editor for the web. Built using HTML, CSS, JavaScript, and Fabric.js, it allows users to create, edit, and manage content on a customizable canvas.",
+    "image": "/image/canva.png",
+    "tags": ["HTML/CSS", "Javascript", "CANVAS", "Fabric.js"],
+    "liveDemo": "https://intern-eight-sable.vercel.app/",
+    "github": "https://github.com/Choucheneeee/CanvasEditPro",
+    "features": [
+      "Upload and position images on the canvas.",
+      "Insert and style text with various fonts, sizes, and colors.",
+      "Save your canvas as an image (PNG, JPEG)."
+    ]
+},
+{
+    "slug": "Young-Engineers",
+    "title": "Young-Engineers",
+    "description": "The application helps administrators manage children, parents, groups, programs, attendance, and payments for educational activities in a structured and efficient way.",
+    "image": "/image/young.png",
+    "tags": ["MongoDB", "Express.js", "React", "Node.js"],
+    "liveDemo": "https://young-engineers-front.vercel.app/login",
+    "github": "https://github.com/Choucheneeee/Young-Engineers-Front",
+    "features": [
+      "Manage programs: create, update, delete, and assign groups to programs.",
+      "Manage groups: create, update, delete, and schedule groups.",
+      "Track attendance: mark and view attendance for sessions."
+    ]
+},
+
+{
+    "slug": "LibraryPro-Manager",
+    "title": "LibraryPro-Manager",
+    "description": "LibraryPro-Manager is a modern and feature-rich library management system designed to simplify the administration and organization of libraries. ",
+    "image": "/image/library.png",
+    "tags": ["Node.js", "Express.js", "MongoDB"],
+    "liveDemo": "https://librarypro-manager.onrender.com/",
+    "github": "https://github.com/Choucheneeee/LibraryPro-Manager.git",
+    "features": [
+      "Manage books: add, update, delete, and search for books.",
+      "Manage users: add, update, delete, and search for users.",
+      "Track book loans and returns."
+    ]
+},
+{
+    "slug": "Portail-RH",
+    "title": "Portail-RH",
+    "description": "Portail Rh platform with JWT role-based access, automated PDF generation, and workflows for leave, training, and loans. Designed dashboards and real-time communication tools to boost HR efficiency.",
+    "image": "/image/rh.png",
+    "tags": ["Node.js", "Express.js", "MongoDB","Angular","Microsoft Azure","Socket.io","Jenkins","Docker"],
+    "liveDemo": "https://portailrh-ctddchbbfuafd7ct.westeurope-01.azurewebsites.net/login",
+    "github": "https://github.com/Choucheneeee/PORTAIL_RH_Front",
+    "features": [
+      "Gestion Documentaire Automatisée : Génération de fiches de paie, attestations et certificats en PDF",
+      "Leave requests with automatic balance calculation",
+      "Training management with budget tracking",
+      "Professional loan system with payment schedules",
+      "HR Dashboards: View budgets and leave utilization rates"
+    ]
+}
+
+
+]
