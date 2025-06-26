@@ -100,12 +100,19 @@ export default function ProjectSection() {
 										Live Demo
 									</a>
 								)}
-								<button
-									onClick={() => router.push(`/projects/${project.slug}`)}
+								<div
+									
 									className="px-4 py-2 rounded border border-[#64FFDA] text-[#64FFDA] font-bold text-sm hover:bg-[#64FFDA22] transition-colors"
 								>
-									View Details
-								</button>
+									<a
+										href={project.github}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										GitHub
+										
+									</a>
+								</div>
 							</div>
 						</div>
 						{/* Animated overlay */}

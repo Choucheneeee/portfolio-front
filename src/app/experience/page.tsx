@@ -4,6 +4,28 @@ import Orb from '../Orb';
 import { useRef, useEffect } from "react";
 
 const experiences = [
+
+    {
+		company: 'ArabSoft',
+		role: 'Intern – Full Stack Developer',
+		location: 'ArabSoft [Tunisia] (Hybrid)',
+		period: '02/2025 - 05/2025',
+		highlights: [
+			'Built a secure Portail RH platform with JWT role-based access, automated PDF generation, and workflows for leave, training, and loans.',
+			'Designed dashboards and real-time communication tools to boost HR efficiency.',
+		],
+		technologies: [
+			'Angular',
+			'Node',
+			'Express',
+			'MongoDb',
+			'GIT',
+			'Docker',
+			'Tailwind CSS',
+			'Jenkins',
+			'Azure',
+		],
+	},
 	{
 		company: 'Confledis',
 		role: 'Intern – Web Developer',

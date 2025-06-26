@@ -8,7 +8,7 @@ import FeedbackSection from "./feedback/page";
 import HomeSection from "./home/page";
 import Navbar from "./navbar";
 import ProjectSection from "./projects/page";
-import SkillsSection from "./skills/skills";
+import SkillsSection from "./skills/page";
 import { useEffect, useState } from "react";
 
 
