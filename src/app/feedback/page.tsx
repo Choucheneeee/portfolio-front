@@ -90,8 +90,8 @@ export default function FeedbackSection() {
 
   // Prepare items for InfiniteScroll
   const items = useMemo(
-    () =>
-      feedbacks.map((fb, idx) => ({
+    () => [
+      ...feedbacks.map((fb, idx) => ({
         content: (
           <div
             key={fb.name + fb.date + idx}
@@ -105,6 +105,16 @@ export default function FeedbackSection() {
           </div>
         ),
       })),
+      {
+        content: (
+          <div className="flex justify-center items-center my-6">
+            <span className="px-4 py-2 rounded-full bg-[#64FFDA]/20 text-[#64FFDA] font-semibold text-base border border-[#64FFDA]">
+              ⟳ End of feedbacks — list will replay
+            </span>
+          </div>
+        ),
+      },
+    ],
     [feedbacks]
   );
 
@@ -161,7 +171,7 @@ export default function FeedbackSection() {
           <InfiniteScroll
             items={items}
             height={600}
-            speed={0.15} // Decrease speed value for slower movement (default was 0.5)
+            speed={0.15}
             pauseOnHover={true}
             className="w-full max-w-2xl mx-auto mb-10"
           />
