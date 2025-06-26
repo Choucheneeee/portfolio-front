@@ -144,7 +144,7 @@ export default function AboutPage() {
           <ProfileCard
             name="Chouchene Mohamed Amine"
             title="Full Stack & DevOps Developer"
-            handle="@chouchene_mohamed_amine"
+            handle="chouchene_mohamed_amine"
             status="Online"
             contactText="Contact Me"
             avatarUrl="image/h.png"

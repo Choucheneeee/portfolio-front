@@ -1,5 +1,6 @@
 "use client";
 import AboutPage from "./about/page";
+import CertifPage from "./certif/page";
 import ContactSection from "./contact/page";
 import Cursor3D from "./cursor3D";
 import ExperienceSection from "./experience/page";
@@ -52,6 +53,9 @@ export default function Home() {
       </FadeInSection>
       <FadeInSection>
         <ProjectSection />
+      </FadeInSection>
+      <FadeInSection>
+        <CertifPage />
       </FadeInSection>
       <FadeInSection>
         <SkillsSection />

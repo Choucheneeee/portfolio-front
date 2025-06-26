@@ -8,6 +8,7 @@ const items = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#project" },
+  { label: "Certifications", href: "#certif" },
   { label: "Skills", href: "#skills" },
   { label: "Feedback", href: "#feed" },
   { label: "Contact", href: "#contact" },
