@@ -23,19 +23,19 @@ export default function HomeSection() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Download CV Button - moved to bottom right */}
+      
       {/* Video Background */}
       <video
         autoPlay
         loop
         muted
         playsInline
-
         className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <source src="image/background.mp4"
-         type="video/mp4" />
+        <source src="image/background.mp4" type="video/mp4" />
       </video>
       {/* Gradient Fade at Bottom */}
       <div

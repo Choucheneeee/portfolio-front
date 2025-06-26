@@ -106,10 +106,7 @@ export default function AboutPage() {
         <h2 className="text-4xl font-extrabold text-white mb-6 tracking-tight">About Me</h2>
         <FadeInParagraph className="text-lg text-[#bfc9d9] mb-4 leading-relaxed">
           I'm <span className="text-white font-bold">Med Amine Chouchene</span>, a
-          dedicated Full Stack Developer with a background in{" "}
-          <span className="text-[#64FFDA] font-semibold">
-            automation and industrial computing
-          </span>
+          dedicated Full Stack Developer
           . Over the years, I’ve worked on diverse projects ranging from custom
           dashboards to scalable APIs, using both frontend and backend
           technologies.
@@ -121,8 +118,8 @@ export default function AboutPage() {
           <span className="text-[#64FFDA] font-semibold">Node.js</span>, and{" "}
           <span className="text-[#64FFDA] font-semibold">Django</span>, and I'm
           experienced in containerized environments with{" "}
-          <span className="text-[#64FFDA] font-semibold">Docker</span> and{" "}
-          <span className="text-[#64FFDA] font-semibold">Kubernetes</span>. I’m
+          <span className="text-[#64FFDA] font-semibold">Docker</span>
+          . I’m
           also skilled in DevOps practices, using tools like{" "}
           <span className="text-[#64FFDA] font-semibold">Jenkins</span>,{" "}
           <span className="text-[#64FFDA] font-semibold">AWS</span>, and{" "}

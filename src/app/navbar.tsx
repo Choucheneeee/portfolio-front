@@ -19,6 +19,16 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 right-0 z-50 flex flex-row-reverse items-start w-full pointer-events-none">
+      {/* Download CV Button */}
+      <div className="absolute top-24 right-8 z-40 pointer-events-auto">
+        <a
+          href="cv.pdf"
+          download
+          className="bg-[#64FFDA] text-[#0A192F] font-bold px-10 py-2 rounded-lg shadow hover:bg-[#52e0c4] transition-colors duration-300 border border-[#233554]"
+        >
+          Download CV
+        </a>
+      </div>
       {/* Desktop Nav */}
       <div
         style={{ height: "96px", position: "relative", zIndex: 150 }}
