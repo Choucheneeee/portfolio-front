@@ -4,6 +4,29 @@ import Orb from '../Orb';
 import { useRef, useEffect } from "react";
 
 const experiences = [
+	
+    {
+		company: 'Wic Doctor',
+		role: 'Full-Time – Full Stack Developer',
+		location: 'Wic Doctor [Nabeul] (Onsite)',
+		period: '09/2025 - Present',
+		highlights: [
+			'Designed and developed scalable web applications to enhance healthcare management systems at WIC Doctor.',
+			'Built and maintained responsive front-end interfaces using modern frameworks for improved user experience. ',
+			'Developed robust backend APIs and database structures to support secure and efficient workflows. ',
+			'Contributed to the launch of digital medical record features, optimizing existing systems for better performance.'
+		],
+		technologies: [
+			'HTML',
+			'Node',
+			'Express',
+			'MySQL',
+			'GIT',
+			'Css',
+			'JavaScript',
+			'GitHub',
+		],
+	},
 
     {
 		company: 'ArabSoft',
