@@ -1,23 +1,26 @@
 "use client";
-import AboutPage from "./about/page";
-import CertifPage from "./certif/page";
-import ContactSection from "./contact/page";
-import Cursor3D from "./cursor3D";
-import ExperienceSection from "./experience/page";
-import FadeInSection from "./fadeInsection";
-import FeedbackSection from "./feedback/page";
-import HomeSection from "./home/page";
-import Navbar from "./navbar";
-import ProjectSection from "./projects/page";
-import SkillsSection from "./skills/page";
-import { useEffect, useState } from "react";
 
+import { useState, useEffect } from "react";
+import Head from "next/head";
+import dynamic from "next/dynamic";
+import Cursor3D from "./cursor3D";
+import Navbar from "./navbar";
+import FadeInSection from "./fadeInsection";
+
+// Dynamically import the sections
+const AboutPage = dynamic(() => import("./about/page"));
+const CertifPage = dynamic(() => import("./certif/page"));
+const ContactSection = dynamic(() => import("./contact/page"));
+const ExperienceSection = dynamic(() => import("./experience/page"));
+const FeedbackSection = dynamic(() => import("./feedback/page"));
+const HomeSection = dynamic(() => import("./home/page"));
+const ProjectSection = dynamic(() => import("./projects/page"));
+const SkillsSection = dynamic(() => import("./skills/page"));
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading or wait for window load event
     const handleLoad = () => setLoading(false);
     if (document.readyState === "complete") {
       setLoading(false);
@@ -40,6 +43,17 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Med Amine Chouchene - Portfolio</title>
+        <meta name="description" content="Med Amine Chouchene's personal portfolio showcasing web development projects, skills, and contact information." />
+        <meta name="keywords" content="Med Amine Chouchene, portfolio, web development, full-stack, developer, projects, React, Next.js, JavaScript" />
+        <meta name="author" content="Med Amine Chouchene" />
+        <meta property="og:title" content="Med Amine Chouchene - Portfolio" />
+        <meta property="og:description" content="Web development portfolio of Med Amine Chouchene." />
+        <meta property="og:image" content="https://chouchene.azurewebsites.net/image/h.png" />
+        <meta property="og:url" content="https://chouchene.azurewebsites.net" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
       <Cursor3D />
       <Navbar />
       <FadeInSection>
