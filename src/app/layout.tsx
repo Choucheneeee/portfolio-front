@@ -1,5 +1,8 @@
+// src/app/layout.tsx
 import { Inter } from 'next/font/google'
 import './globals.css'
+import InstallPrompt from './InstallPrompt';
+import PWATest from './PWATest';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,6 +14,13 @@ export const metadata = {
   creator: 'Med Amine Chouchene',
   publisher: 'Med Amine Chouchene',
   metadataBase: new URL('https://chouchene.azurewebsites.net'),
+  manifest: '/manifest.json',
+  // Remove themeColor from here
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Med Amine Chouchene Portfolio'
+  },
   openGraph: {
     title: 'Med Amine Chouchene - Full Stack Developer',
     description: 'Portfolio of Med Amine Chouchene - Full Stack Developer specializing in React, Next.js, and modern web technologies',
@@ -47,6 +57,13 @@ export const metadata = {
   },
 }
 
+// Add this viewport export to fix themeColor warnings
+export const viewport = {
+  themeColor: '#000000',
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -55,6 +72,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon/android-chrome-192x192.png" />
+        <meta name="theme-color" content="#000000" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -74,13 +94,16 @@ export default function RootLayout({
               "sameAs": [
                 "https://github.com/Choucheneeee",
                 "https://www.linkedin.com/in/chouchene-med-amine",
-                
               ]
             })
           }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        {/* <PWATest /> */}
+        <InstallPrompt />
+      </body>
     </html>
   )
 }

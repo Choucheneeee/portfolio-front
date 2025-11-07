@@ -1,3 +1,4 @@
+// src/app/page.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -44,12 +45,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Med Amine Chouchene - Portfolio</title>
-        <meta name="description" content="Med Amine Chouchene's personal portfolio showcasing web development projects, skills, and contact information." />
-        <meta name="keywords" content="Med Amine Chouchene, portfolio, web development, full-stack, developer, projects, React, Next.js, JavaScript" />
-        <meta name="author" content="Med Amine Chouchene" />
-        <meta property="og:title" content="Med Amine Chouchene - Portfolio" />
-        <meta property="og:description" content="Web development portfolio of Med Amine Chouchene." />
+        <title>Mohamed Amine Chouchene - Portfolio</title>
+        <meta name="description" content="Mohamed Amine Chouchene's personal portfolio showcasing web development projects, skills, and contact information." />
+        <meta name="keywords" content="Mohamed Amine Chouchene, portfolio, web development, full-stack, developer, projects, React, Next.js, JavaScript" />
+        <meta name="author" content="Mohamed Amine Chouchene" />
+        <meta property="og:title" content="Mohamed Amine Chouchene - Portfolio" />
+        <meta property="og:description" content="Web development portfolio of Mohamed Amine Chouchene." />
         <meta property="og:image" content="https://chouchene.azurewebsites.net/image/h.png" />
         <meta property="og:url" content="https://chouchene.azurewebsites.net" />
         <meta name="twitter:card" content="summary_large_image" />
