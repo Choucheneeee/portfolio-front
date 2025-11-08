@@ -3,61 +3,28 @@ import mongoose from "mongoose";
 import dbConnect from '@/lib/mongodb';
 
 const installationSchema = new mongoose.Schema({
-  // Basic identification
   userAgent: String,
   platform: String,
-  language: String,
-  timezone: String,
-  
-  // Network information
-  ip: String,
-  
-  // Hardware information (will be sent from client)
-  deviceMemory: Number,
-  hardwareConcurrency: Number,
-  screenResolution: String,
-  
-  // Browser capabilities
-  cookiesEnabled: Boolean,
-  javaEnabled: Boolean,
-  
-  // Installation context
-  referrer: String,
-  url: String,
-  
   timestamp: { type: Date, default: Date.now },
 });
 
 const Installation = mongoose.models.Installation || mongoose.model("Installation", installationSchema);
 
-function getClientIP(request: Request) {
-  const headers = [
-    'x-forwarded-for',
-    'x-real-ip',
-    'cf-connecting-ip',
-    'x-client-ip',
-    'true-client-ip'
-  ];
-  
-  for (const header of headers) {
-    const value = request.headers.get(header);
-    if (value) {
-      return value.split(',')[0].trim();
-    }
-  }
-  
-  return 'unknown';
-}
+// Cache for stats
+let cachedStats: any = null;
+let statsCacheTime = 0;
 
 export async function GET() {
   try {
+    // Return cached stats if recent (5 minutes)
+    const now = Date.now();
+    if (cachedStats && (now - statsCacheTime) < 300000) {
+      return Response.json(cachedStats);
+    }
+
     await dbConnect();
     
     const totalInstallations = await Installation.countDocuments();
-    const installationsByPlatform = await Installation.aggregate([
-      { $group: { _id: '$platform', count: { $sum: 1 } } }
-    ]);
-
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
     
@@ -65,19 +32,29 @@ export async function GET() {
       timestamp: { $gte: thirtyDaysAgo } 
     });
 
-    return Response.json({
+    const stats = {
       totalInstallations,
       recentInstallations,
-      installationsByPlatform,
       success: true
+    };
+
+    // Cache the stats
+    cachedStats = stats;
+    statsCacheTime = now;
+
+    return Response.json(stats, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300', // 5 minutes
+      }
     });
 
   } catch (error) {
     console.error('Error fetching installation stats:', error);
-    return new Response(
-      JSON.stringify({ success: false, error: 'Failed to fetch installation stats' }),
-      { status: 500 }
-    );
+    return Response.json({ 
+      totalInstallations: 0,
+      recentInstallations: 0,
+      success: false 
+    });
   }
 }
 
@@ -85,15 +62,17 @@ export async function POST(request: Request) {
   try {
     await dbConnect();
     
-    // Get ALL data from the client, don't try to access browser APIs here
     const installationData = await request.json();
 
     const installation = new Installation({
       ...installationData,
-      ip: getClientIP(request), // This is server-side, so it's fine
+      timestamp: new Date(),
     });
 
     await installation.save();
+
+    // Invalidate stats cache
+    cachedStats = null;
 
     return Response.json({ 
       success: true, 
@@ -102,9 +81,9 @@ export async function POST(request: Request) {
 
   } catch (error) {
     console.error('Error tracking installation:', error);
-    return new Response(
-      JSON.stringify({ success: false, error: 'Failed to track installation' }),
-      { status: 500 }
-    );
+    return Response.json({ 
+      success: false, 
+      error: 'Failed to track installation' 
+    }, { status: 500 });
   }
 }

@@ -2,67 +2,34 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import InstallPrompt from './InstallPrompt';
-import PWATest from './PWATest';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap', // Better performance
+});
 
 export const metadata = {
-  title: 'Med Amine Chouchene - Full Stack Developer | Web Developer Portfolio',
-  description: 'Med Amine Chouchene - Full Stack Developer specializing in React, Next.js, JavaScript, and modern web development. View my projects, skills, and experience.',
-  keywords: 'Med Amine Chouchene, Chouchene, full stack developer, web developer, React developer, Next.js, JavaScript, portfolio, Tunisia developer',
-  authors: [{ name: 'Med Amine Chouchene' }],
-  creator: 'Med Amine Chouchene',
-  publisher: 'Med Amine Chouchene',
+  title: 'Mohamed Amine Chouchene - Full Stack Developer',
+  description: 'Full Stack Developer specializing in React, Next.js, JavaScript, and modern web development.',
+  keywords: 'Mohamed Amine Chouchene, Chouchene, full stack developer,Med Amine Chouchene,chouchene,med amine web developer,chouchene developer, amine chouchene , web developer, React developer, Next.js, JavaScript, portfolio, Tunisia developer',
   metadataBase: new URL('https://chouchene.azurewebsites.net'),
+  authors: [{ name: 'Mohamed Amine Chouchene' }],
+  creator: 'Mohamed Amine Chouchene',
+  publisher: 'Mohamed Amine Chouchene',
   manifest: '/manifest.json',
-  // Remove themeColor from here
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: 'Med Amine Chouchene Portfolio'
-  },
-  openGraph: {
-    title: 'Med Amine Chouchene - Full Stack Developer',
-    description: 'Portfolio of Med Amine Chouchene - Full Stack Developer specializing in React, Next.js, and modern web technologies',
-    url: 'https://chouchene.azurewebsites.net',
-    siteName: 'Med Amine Chouchene Portfolio',
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Med Amine Chouchene - Full Stack Developer',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Med Amine Chouchene - Full Stack Developer',
-    description: 'Portfolio of Med Amine Chouchene - Full Stack Developer',
-    images: ['/og-image.jpg'],
-    creator: '@yourtwitterhandle',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-}
+};
 
-// Add this viewport export to fix themeColor warnings
 export const viewport = {
-  themeColor: '#000000',
+  themeColor: '#0A192F',
   width: 'device-width',
   initialScale: 1,
 }
+
+// Inline critical CSS for above-the-fold content
+const criticalCSS = `
+  body { background-color: #0A192F; color: white; margin: 0; padding: 0; }
+  .loading-spinner { border: 2px solid #64FFDA; border-top: 2px solid transparent; }
+`;
 
 export default function RootLayout({
   children,
@@ -70,38 +37,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon/android-chrome-192x192.png" />
-        <meta name="theme-color" content="#000000" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Med Amine Chouchene",
-              "url": "https://chouchene.azurewebsites.net",
-              "image": "https://chouchene.azurewebsites.net/profile.jpg",
-              "jobTitle": "Full Stack Developer",
-              "description": "Full Stack Developer specializing in React, Next.js, JavaScript, and modern web technologies",
-              "knowsAbout": [
-                "React", "Next.js", "JavaScript", "TypeScript", 
-                "Node.js", "Web Development", "Full Stack Development",
-                "Frontend Development", "Backend Development"
-              ],
-              "sameAs": [
-                "https://github.com/Choucheneeee",
-                "https://www.linkedin.com/in/chouchene-med-amine",
-              ]
-            })
-          }}
-        />
+        <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
+        <link rel="dns-prefetch" href="https://chouchene.azurewebsites.net" />
       </head>
-      <body className={inter.className}>
+      <body>
         {children}
-        {/* <PWATest /> */}
         <InstallPrompt />
       </body>
     </html>

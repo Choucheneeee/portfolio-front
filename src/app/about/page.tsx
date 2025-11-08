@@ -107,7 +107,7 @@ export default function AboutPage() {
         <FadeInParagraph className="text-lg text-[#bfc9d9] mb-4 leading-relaxed">
           I'm <span className="text-white font-bold">Med Amine Chouchene</span>, a
           dedicated Full Stack Developer
-          . Over the years, I’ve worked on diverse projects ranging from custom
+          . Over the years, I've worked on diverse projects ranging from custom
           dashboards to scalable APIs, using both frontend and backend
           technologies.
         </FadeInParagraph>
@@ -119,7 +119,7 @@ export default function AboutPage() {
           <span className="text-[#64FFDA] font-semibold">Django</span>, and I'm
           experienced in containerized environments with{" "}
           <span className="text-[#64FFDA] font-semibold">Docker</span>
-          . I’m
+          . I'm
           also skilled in DevOps practices, using tools like{" "}
           <span className="text-[#64FFDA] font-semibold">Jenkins</span>,{" "}
           <span className="text-[#64FFDA] font-semibold">AWS</span>, and{" "}
@@ -138,18 +138,17 @@ export default function AboutPage() {
         </FadeInParagraph>
       </div>
       
-          <ProfileCard
-            name="Chouchene Mohamed Amine"
-            title="Full Stack & DevOps Developer"
-            handle="chouchene_mohamed_amine"
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl="image/h.png"
-            showUserInfo={true}
-            enableTilt={true}
-            onContactClick={() => console.log('Contact clicked')}
-          />
-       
+      <ProfileCard
+        name="Chouchene Mohamed Amine"
+        title="Full Stack & DevOps Developer"
+        handle="chouchene_mohamed_amine"
+        status="Online"
+        contactText="Contact Me"
+        avatarUrl="image/h1.webp"
+        showUserInfo={true}
+        enableTilt={true}
+        onContactClick={() => console.log('Contact clicked')}
+      />
     </section>
   );
 }

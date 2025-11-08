@@ -14,21 +14,21 @@ const certificates: Certif[] = [
     issuer: "Amazon Web Services",
     date: "Sep 2024",
     link: "https://aws.amazon.com/training/classroom/developing-serverless-solutions-on-aws/",
-    image: "image/1.jpg",
+    image: "image/1.webp",
   },
   {
     title: "Amazon EKS Primer",
     issuer: "Amazon Web Services",
     date: "Aug 2024",
     link: "https://aws.amazon.com/fr/training/classroom/running-containers-on-amazon-elastic-kubernetes-service-amazon-eks/",
-    image: "image/eks.jpg",
+    image: "image/eks.webp",
   },
   {
     title: "Introduction to Containers",
     issuer: "Amazon Web Services",
     date: "Nov 2024",
     link: "https://aws.amazon.com/containers/getting-started/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc&containers.sort-by=item.additionalFields.createdDate&containers.sort-order=desc",
-    image: "image/intro.jpg",
+    image: "image/intro.webp",
   },
   // Add more certificates as needed
 ];

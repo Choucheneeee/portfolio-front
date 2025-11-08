@@ -6,37 +6,57 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Cursor3D from "./cursor3D";
 import Navbar from "./navbar";
-import FadeInSection from "./fadeInsection";
 
-// Dynamically import the sections
-const AboutPage = dynamic(() => import("./about/page"));
-const CertifPage = dynamic(() => import("./certif/page"));
-const ContactSection = dynamic(() => import("./contact/page"));
-const ExperienceSection = dynamic(() => import("./experience/page"));
-const FeedbackSection = dynamic(() => import("./feedback/page"));
-const HomeSection = dynamic(() => import("./home/page"));
-const ProjectSection = dynamic(() => import("./projects/page"));
-const SkillsSection = dynamic(() => import("./skills/page"));
+// Dynamically import sections with better loading
+const HomeSection = dynamic(() => import("./home/page"), {
+  loading: () => <div className="min-h-screen bg-[#0A192F]" />
+});
+
+const AboutPage = dynamic(() => import("./about/page"), {
+  loading: () => <div className="min-h-screen bg-[#0A192F]" />
+});
+
+const ExperienceSection = dynamic(() => import("./experience/page"), {
+  loading: () => <div className="min-h-screen bg-[#0A192F]" />
+});
+
+const ProjectSection = dynamic(() => import("./projects/page"), {
+  loading: () => <div className="min-h-screen bg-[#0A192F]" />
+});
+
+const CertifPage = dynamic(() => import("./certif/page"), {
+  loading: () => <div className="min-h-screen bg-[#0A192F]" />
+});
+
+const SkillsSection = dynamic(() => import("./skills/page"), {
+  loading: () => <div className="min-h-screen bg-[#0A192F]" />
+});
+
+const FeedbackSection = dynamic(() => import("./feedback/page"), {
+  loading: () => <div className="min-h-screen bg-[#0A192F]" />
+});
+
+const ContactSection = dynamic(() => import("./contact/page"), {
+  loading: () => <div className="min-h-screen bg-[#0A192F]" />
+});
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const handleLoad = () => setLoading(false);
-    if (document.readyState === "complete") {
+    // Much shorter loading time - don't wait for everything
+    const timer = setTimeout(() => {
       setLoading(false);
-    } else {
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
+    }, 800); // Reduced from full page load
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-[9999]">
+      <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50">
         <div className="flex flex-col items-center">
-          <div className="w-16 h-16 border-4 border-[#64FFDA] border-t-transparent rounded-full animate-spin mb-4"></div>
-          <span className="text-[#64FFDA] text-xl font-semibold">Loading...</span>
+          <div className="w-12 h-12 border-2 border-[#64FFDA] border-t-transparent rounded-full animate-spin"></div>
         </div>
       </div>
     );
@@ -46,41 +66,25 @@ export default function Home() {
     <>
       <Head>
         <title>Mohamed Amine Chouchene - Portfolio</title>
-        <meta name="description" content="Mohamed Amine Chouchene's personal portfolio showcasing web development projects, skills, and contact information." />
-        <meta name="keywords" content="Mohamed Amine Chouchene, portfolio, web development, full-stack, developer, projects, React, Next.js, JavaScript" />
-        <meta name="author" content="Mohamed Amine Chouchene" />
-        <meta property="og:title" content="Mohamed Amine Chouchene - Portfolio" />
-        <meta property="og:description" content="Web development portfolio of Mohamed Amine Chouchene." />
-        <meta property="og:image" content="https://chouchene.azurewebsites.net/image/h.png" />
-        <meta property="og:url" content="https://chouchene.azurewebsites.net" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="description" content="Full Stack Developer specializing in React, Next.js, and modern web technologies" />
+        <meta property="og:image" content="/image/h1.webp" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/image/h1.webp" as="image" type="image/webp" />
       </Head>
+      
       <Cursor3D />
       <Navbar />
-      <FadeInSection>
-        <HomeSection />
-      </FadeInSection>
-      <FadeInSection>
-        <AboutPage />
-      </FadeInSection>
-      <FadeInSection>
-        <ExperienceSection />
-      </FadeInSection>
-      <FadeInSection>
-        <ProjectSection />
-      </FadeInSection>
-      <FadeInSection>
-        <CertifPage />
-      </FadeInSection>
-      <FadeInSection>
-        <SkillsSection />
-      </FadeInSection>
-      <FadeInSection>
-        <FeedbackSection />
-      </FadeInSection>
-      <FadeInSection>
-        <ContactSection />
-      </FadeInSection>
+      
+      {/* Remove FadeInSection wrappers for critical content */}
+      <HomeSection />
+      <AboutPage />
+      <ExperienceSection />
+      <ProjectSection />
+      <CertifPage />
+      <SkillsSection />
+      <FeedbackSection />
+      <ContactSection />
     </>
   );
 }
