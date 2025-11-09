@@ -1,11 +1,11 @@
-# Multi-stage build to reduce final image size
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 WORKDIR /app
 
 # Copy package files first for better caching
 COPY package*.json ./
-RUN npm ci --only=production
+# Install all dependencies
+RUN npm install
 
 # Copy source code
 COPY . .
@@ -13,20 +13,12 @@ COPY . .
 # Build the application
 RUN npx next build
 
-# Production stage
-FROM node:20-alpine AS runner
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nextjs -u 1001
 
-WORKDIR /app
-
-# Don't run as root
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-# Copy built application from builder stage
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+# Change ownership of app files
+RUN chown -R nextjs:nodejs /app
 
 # Switch to non-root user
 USER nextjs
