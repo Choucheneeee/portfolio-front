@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata = {
   title: 'Mohamed Amine Chouchene - Full Stack Developer',
   description: 'Full Stack Developer specializing in React, Next.js, JavaScript, and modern web development.',
-  keywords: 'Mohamed Amine Chouchene, Chouchene, full stack developer,Med Amine Chouchene,chouchene,med amine web developer,chouchene developer, amine chouchene , web developer, React developer, Next.js, JavaScript, portfolio, Tunisia developer',
+  keywords: 'Mohamed Amine Chouchene, Chouchene, full stack developer,Med Amine Chouchene,chouchene, Isima, ISI mahdia , Itbs ,chouchene github,choucheneeee ,med amine web developer,chouchene developer, amine chouchene , web developer, React developer, Next.js, JavaScript, portfolio, Tunisia developer',
   metadataBase: new URL('https://chouchene.azurewebsites.net'),
   authors: [{ name: 'Mohamed Amine Chouchene' }],
   creator: 'Mohamed Amine Chouchene',

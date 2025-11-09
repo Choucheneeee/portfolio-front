@@ -105,7 +105,7 @@ export default function AboutPage() {
       <div className="z-10 max-w-xl flex-1 bg-[#112240]/80 rounded-3xl shadow-2xl p-10 backdrop-blur-md border border-[#233554]">
         <h2 className="text-4xl font-extrabold text-white mb-6 tracking-tight">About Me</h2>
         <FadeInParagraph className="text-lg text-[#bfc9d9] mb-4 leading-relaxed">
-          I'm <span className="text-white font-bold">Med Amine Chouchene</span>, a
+          I'm <span className="text-white font-bold">Mohamed Amine Chouchene</span>, a
           dedicated Full Stack Developer
           . Over the years, I've worked on diverse projects ranging from custom
           dashboards to scalable APIs, using both frontend and backend
