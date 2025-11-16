@@ -22,7 +22,7 @@ export default function Navbar() {
       {/* Download CV Button */}
       <div className="absolute top-24 right-8 z-40 pointer-events-auto">
         <a
-          href="cv.pdf"
+          href="chouchene_mohamed_amine.pdf"
           download
           className="bg-[#64FFDA] text-[#0A192F] font-bold px-10 py-2 rounded-lg shadow hover:bg-[#52e0c4] transition-colors duration-300 border border-[#233554]"
         >
