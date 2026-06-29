@@ -28,7 +28,7 @@ export default function ProjectSection() {
 	return (
 		<section
 			id="project"
-			className="min-h-screen flex flex-col items-center justify-center bg-[#0A192F] px-4 py-16"
+			className="min-h-screen flex flex-col items-center justify-center bg-[#0A192F]/80 backdrop-blur-sm px-4 py-16"
 		>
 			<h1 className="text-4xl font-extrabold text-white mb-12 tracking-tight">
 				My Projects
@@ -100,19 +100,16 @@ export default function ProjectSection() {
 										Live Demo
 									</a>
 								)}
-								<div
-									
-									className="px-4 py-2 rounded border border-[#64FFDA] text-[#64FFDA] font-bold text-sm hover:bg-[#64FFDA22] transition-colors"
-								>
+								{project.github && (
 									<a
 										href={project.github}
 										target="_blank"
 										rel="noopener noreferrer"
+										className="px-4 py-2 rounded border border-[#64FFDA] text-[#64FFDA] font-bold text-sm hover:bg-[#64FFDA22] transition-colors"
 									>
 										GitHub
-										
 									</a>
-								</div>
+								)}
 							</div>
 						</div>
 						{/* Animated overlay */}
@@ -123,6 +120,23 @@ export default function ProjectSection() {
 						/>
 					</div>
 				))}
+			</div>
+
+			{/* "See all repos" button */}
+			<div className="mt-16">
+				<a
+					href="https://github.com/Choucheneeee"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl border-2 border-[#64FFDA] text-[#64FFDA] font-bold text-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-all duration-300 hover:shadow-[0_0_30px_#64FFDA44]"
+				>
+					<span>📦</span>
+					<span>+45 other projects available on GitHub</span>
+					<span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+				</a>
+				<p className="text-[#8892B0] text-sm mt-3 text-center">
+					Explore my full portfolio of repositories
+				</p>
 			</div>
 		</section>
 	);

@@ -2,15 +2,15 @@
 import { useRef, useEffect } from "react";
 import {
   SiHtml5, SiCss3, SiJavascript, SiReact, SiAngular, SiBootstrap, SiTailwindcss,
-  SiExpress, SiDjango, SiNodedotjs,
+  SiNextdotjs,
+  SiExpress, SiDjango, SiNodedotjs, SiFastapi, SiSpringboot,
   SiMysql, SiMongodb, SiSqlite,
-  SiDocker, SiJenkins,
+  SiDocker, SiJenkins, SiGithubactions, SiNginx,
   SiGit, SiGithub
 } from "react-icons/si";
 
 import { VscAzure } from "react-icons/vsc";
 import { FaAws } from "react-icons/fa";
-
 
 const skillCategories = [
   {
@@ -21,6 +21,7 @@ const skillCategories = [
       { icon: SiJavascript, label: "JavaScript" },
       { icon: SiReact, label: "React" },
       { icon: SiAngular, label: "Angular" },
+      { icon: SiNextdotjs, label: "Next.js" },
       { icon: SiBootstrap, label: "Bootstrap" },
       { icon: SiTailwindcss, label: "Tailwind" },
     ],
@@ -28,9 +29,9 @@ const skillCategories = [
   {
     name: "Backend",
     skills: [
+      { icon: SiNodedotjs, label: "Node.js" },
       { icon: SiExpress, label: "Express" },
       { icon: SiDjango, label: "Django" },
-      { icon: SiNodedotjs, label: "Node.js" },
     ],
   },
   {
@@ -45,16 +46,18 @@ const skillCategories = [
     name: "DevOps & Cloud",
     skills: [
       { icon: SiDocker, label: "Docker" },
+      { icon: SiDocker, label: "Docker Compose" }, // reusing Docker icon
       { icon: SiJenkins, label: "Jenkins" },
+      { icon: SiGithubactions, label: "GitHub Actions" },
+      { icon: SiNginx, label: "Nginx" },
       { icon: VscAzure, label: "Azure" },
-      { icon: FaAws, label: "AWS" },
     ],
   },
   {
     name: "Version Control",
     skills: [
       { icon: SiGit, label: "Git" },
-      { icon: SiGithub, label: "Github" },
+      { icon: SiGithub, label: "GitHub" },
     ],
   },
 ];
@@ -92,7 +95,7 @@ function FadeInSkill({ children, delay = 0 }: { children: React.ReactNode; delay
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="min-h-screen flex flex-col items-center justify-center bg-[#0A192F] px-4 py-16">
+    <section id="skills" className="min-h-screen flex flex-col items-center justify-center bg-[#0A192F]/80 backdrop-blur-sm px-4 py-16">
       <h1 className="text-4xl font-extrabold text-white mb-10 tracking-tight animate-fade-in">
         Skills
       </h1>

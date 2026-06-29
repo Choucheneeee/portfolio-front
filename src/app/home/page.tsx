@@ -1,7 +1,5 @@
 'use client';
 import { useRef, useEffect, useState } from "react";
-
-// imorts css file
 import "./home.css";
 
 export default function HomeSection() {
@@ -23,37 +21,21 @@ export default function HomeSection() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Download CV Button - moved to bottom right */}
-      
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <source src="image/background.mp4" type="video/mp4" />
-      </video>
-      {/* Gradient Fade at Bottom */}
+      {/* Bottom fade gradient – semi‑transparent to let background through */}
       <div
         className="absolute bottom-0 left-0 w-full h-32 z-20 pointer-events-none"
         style={{
-          background: "linear-gradient(to bottom, transparent, #0A192F 90%)",
+          background: "linear-gradient(to bottom, transparent, rgba(10, 25, 47, 0.7) 90%)",
         }}
       />
-      {/* Overlay */}
+
+      {/* Overlay – reduced opacity to let background shine */}
       <div
-        className={`absolute inset-0 bg-[#0A192F]/80 z-10 transition-opacity duration-1000 ${
+        className={`absolute inset-0 bg-[#0A192F]/60 backdrop-blur-sm z-10 transition-opacity duration-1000 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
-      ></div>
-      {/* Profile Image - perfectly centered in a circle */}
-      <div className="absolute top-1/8 left-1/5 transform -translate-x-1/2 z-30 flex justify-center">
-  
-</div>
+      />
+
       {/* Content */}
       <div className="relative z-30 flex flex-col items-center text-center mt-48">
         <h1 className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg mb-4 flex flex-wrap justify-center items-center gap-4">
@@ -62,20 +44,23 @@ export default function HomeSection() {
             Chouchene Mohamed Amine,
           </span>
         </h1>
+        {/* 👇 Updated title – only the new role */}
         <p className="text-2xl md:text-3xl font-semibold text-[#64FFDA] drop-shadow">
-          Full Stack &amp; DevOps Developer
+          Cloud &amp; CI/CD Administrator
         </p>
         <div className="tags">
-
-        <p className="text-shadow text-lg md:text-xl text-[#8892B0] mt-4 max-w-2xl">
-          <small>I'm a passionate Full Stack Developer with hands-on experience in building secure, scalable, and dynamic web applications using modern technologies like React, Angular, Node.js, Django, and Docker.
-
-I bring a strong DevOps mindset to development, integrating tools such as Jenkins, AWS, and Azure to streamline CI/CD pipelines and automate deployments.
-
-        </small>
-        </p>
-        	</div>
-
+          <p className="text-shadow text-lg md:text-xl text-[#8892B0] mt-4 max-w-2xl">
+            <small>
+              I specialise in managing Azure cloud infrastructure, automating CI/CD pipelines,
+              and ensuring reliable, scalable deployments. With a strong background in full‑stack
+              development, I bridge the gap between development and operations to deliver
+              secure, high‑performance solutions.
+              <br /><br />
+              My expertise includes Azure VM, App Services, Docker, GitHub Actions, and
+              infrastructure monitoring – helping teams ship faster with fewer errors.
+            </small>
+          </p>
+        </div>
       </div>
     </section>
   );

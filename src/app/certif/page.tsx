@@ -35,38 +35,39 @@ const certificates: Certif[] = [
 
 export default function CertifPage() {
   return (
-    <section id="certif" className="min-h-screen flex flex-col items-center justify-center bg-[#0A192F] px-4 py-24">
-      <h1 className="text-5xl font-extrabold text-white mb-14 tracking-tight">My Certificates</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 w-full max-w-6xl">
-        {certificates.map((cert, idx) => (
-          <div
-            key={cert.title + idx}
-            className="bg-[#112240]/90 border-2 border-[#64FFDA] rounded-3xl shadow-2xl p-10 flex flex-col items-center transition-transform hover:scale-105"
-          >
-            {cert.image && (
-              <img
-                src={cert.image}
-                alt={cert.title}
-                loading="lazy"
-                className="w-32 h-32 object-contain mb-6 rounded-xl border border-[#233554] bg-white"
-              />
-            )}
-            <h2 className="text-2xl font-bold text-[#64FFDA] mb-4 text-center">{cert.title}</h2>
-            <div className="text-lg text-[#bfc9d9] mb-2 text-center font-semibold">{cert.issuer}</div>
-            <div className="text-base text-[#bfc9d9] mb-4 text-center">{cert.date}</div>
-            {cert.link && (
-              <a
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#64FFDA] underline text-lg mt-2 font-bold"
-              >
-                View Certificate
-              </a>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
+    // <section id="certif" className="min-h-screen flex flex-col items-center justify-center bg-[#0A192F]/80 backdrop-blur-sm px-4 py-24">
+    //   <h1 className="text-5xl font-extrabold text-white mb-14 tracking-tight">My Certificates</h1>
+    //   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 w-full max-w-6xl">
+    //     {certificates.map((cert, idx) => (
+    //       <div
+    //         key={cert.title + idx}
+    //         className="bg-[#112240]/90 border-2 border-[#64FFDA] rounded-3xl shadow-2xl p-10 flex flex-col items-center transition-transform hover:scale-105"
+    //       >
+    //         {cert.image && (
+    //           <img
+    //             src={cert.image}
+    //             alt={cert.title}
+    //             loading="lazy"
+    //             className="w-32 h-32 object-contain mb-6 rounded-xl border border-[#233554] bg-white"
+    //           />
+    //         )}
+    //         <h2 className="text-2xl font-bold text-[#64FFDA] mb-4 text-center">{cert.title}</h2>
+    //         <div className="text-lg text-[#bfc9d9] mb-2 text-center font-semibold">{cert.issuer}</div>
+    //         <div className="text-base text-[#bfc9d9] mb-4 text-center">{cert.date}</div>
+    //         {cert.link && (
+    //           <a
+    //             href={cert.link}
+    //             target="_blank"
+    //             rel="noopener noreferrer"
+    //             className="text-[#64FFDA] underline text-lg mt-2 font-bold"
+    //           >
+    //             View Certificate
+    //           </a>
+    //         )}
+    //       </div>
+    //     ))}
+    //   </div>
+    // </section>
+    <></>
   );
 }

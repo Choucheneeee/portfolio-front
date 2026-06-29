@@ -137,7 +137,7 @@ export default function FeedbackSection() {
   return (
     <section
       id="feed"
-      className="min-h-[120vh] flex flex-col items-center justify-center bg-[#0A192F] px-4 py-24"
+      className="min-h-[120vh] flex flex-col items-center justify-center bg-[#0A192F]/80 backdrop-blur-sm px-4 py-24"
     >
       <h1 className="text-4xl font-extrabold text-white mb-10 tracking-tight">Feedback</h1>
       <div
@@ -185,14 +185,14 @@ export default function FeedbackSection() {
         <input
           type="text"
           placeholder="Your Name"
-          className="rounded-lg px-4 py-2 bg-[#0A192F] text-white border border-[#233554] focus:outline-none focus:border-[#64FFDA] transition-all"
+          className="rounded-lg px-4 py-2 bg-[#0A192F]/80 backdrop-blur-sm text-white border border-[#233554] focus:outline-none focus:border-[#64FFDA] transition-all"
           value={name}
           onChange={(e) => setName(e.target.value)}
           disabled={submitting}
         />
         <textarea
           placeholder="Your Feedback"
-          className="rounded-lg px-4 py-2 bg-[#0A192F] text-white border border-[#233554] focus:outline-none focus:border-[#64FFDA] transition-all min-h-[80px]"
+          className="rounded-lg px-4 py-2 bg-[#0A192F]/80 backdrop-blur-sm text-white border border-[#233554] focus:outline-none focus:border-[#64FFDA] transition-all min-h-[80px]"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           disabled={submitting}

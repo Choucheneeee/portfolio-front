@@ -1,18 +1,5 @@
 [
   {
-    "slug": "Weather-Wise",
-    "title": "Weather Website",
-    "description": " WeatherWise is a user-friendly weather application designed to provide accurate and up-to-date weather forecasts.",
-    "image": "/image/weather.webp",
-    "tags": ["React"],
-    "liveDemo": "https://weather-wise-ten-chi.vercel.app/",
-    "github": "https://github.com/Choucheneeee/WeatherWise-2.0",
-    "features": [
-      "Animated transitions",
-      "Responsive design"
-    ]
-  },
-  {
     "slug": "Canvas-Edit-Pro",
     "title": "CanvasEditPro",
     "description": "CanvasEditPro is a simple yet powerful canvas editor for the web. Built using HTML, CSS, JavaScript, and Fabric.js, it allows users to create, edit, and manage content on a customizable canvas.",
@@ -25,52 +12,67 @@
       "Insert and style text with various fonts, sizes, and colors.",
       "Save your canvas as an image (PNG, JPEG)."
     ]
-},
-{
-    "slug": "Young-Engineers",
-    "title": "Young-Engineers",
-    "description": "The application helps administrators manage children, parents, groups, programs, attendance, and payments for educational activities in a structured and efficient way.",
-    "image": "/image/young.webp",
-    "tags": ["MongoDB", "Express.js", "React", "Node.js"],
-    "liveDemo": "https://young-engineers-front.vercel.app/login",
-    "github": "https://github.com/Choucheneeee/Young-Engineers-Front",
-    "features": [
-      "Manage programs: create, update, delete, and assign groups to programs.",
-      "Manage groups: create, update, delete, and schedule groups.",
-      "Track attendance: mark and view attendance for sessions."
-    ]
-},
+  },
 
-{
-    "slug": "LibraryPro-Manager",
-    "title": "LibraryPro-Manager",
-    "description": "LibraryPro-Manager is a modern and feature-rich library management system designed to simplify the administration and organization of libraries. ",
-    "image": "/image/library.webp",
-    "tags": ["Node.js", "Express.js", "MongoDB"],
-    "liveDemo": "https://librarypro-manager.onrender.com/",
-    "github": "https://github.com/Choucheneeee/LibraryPro-Manager.git",
+  {
+    "slug": "doctor",
+    "title": "Wic Doctor – Main Platform",
+    "description": "Healthcare management platform and corporate website. Built with Next.js, Docker, and Azure, featuring digital medical records, CI/CD via GitHub Actions, and Docker Compose orchestration.",
+    "image": "/image/wic-doctor.png",
+    "tags": ["Next.js", "Node.js", "Express", "MySQL", "Docker", "Azure", "CI/CD", "Docker Compose"],
+    "liveDemo": "https://wic-doctor.com/",
     "features": [
-      "Manage books: add, update, delete, and search for books.",
-      "Manage users: add, update, delete, and search for users.",
-      "Track book loans and returns."
+      "Full digital medical records management",
+      "Responsive and intuitive UI for healthcare professionals",
+      "Automated CI/CD pipelines with GitHub Actions",
+      "Docker Compose for multi-container deployment",
+      "Azure VM and App Services hosting"
     ]
-},
-{
-    "slug": "Portail-RH",
-    "title": "Portail-RH",
-    "description": "Portail Rh platform with JWT role-based access, automated PDF generation, and workflows for leave, training, and loans. Designed dashboards and real-time communication tools to boost HR efficiency.",
-    "image": "/image/rh.webp",
-    "tags": ["Node.js", "Express.js", "MongoDB","Angular","Microsoft Azure","Socket.io","Jenkins","Docker"],
-    "liveDemo": "https://portailrh-ctddchbbfuafd7ct.westeurope-01.azurewebsites.net/login",
-    "github": "https://github.com/Choucheneeee/PORTAIL_RH_Front",
+  },
+  {
+    "slug": "talk",
+    "title": "Wic Talk – AI Voice Communication",
+    "description": "Real-time voice communication platform with AI-driven translation using Azure OpenAI Realtime API. Enables multilingual conversations with automatic translation during calls.",
+    "image": "/image/wic-talk.png",
+    "tags": ["Next.js", "Azure", "OpenAI", "WebRTC", "Docker", "CI/CD"],
+    "liveDemo": "https://wic-talk.com/",
     "features": [
-      "Gestion Documentaire Automatisée : Génération de fiches de paie, attestations et certificats en PDF",
-      "Leave requests with automatic balance calculation",
-      "Training management with budget tracking",
-      "Professional loan system with payment schedules",
-      "HR Dashboards: View budgets and leave utilization rates"
+      "Real-time voice translation across 5 languages",
+      "WebRTC-based browser calls (no app needed)",
+      "Integration with Azure OpenAI Realtime API",
+      "Outbound/inbound phone call support",
+      "Clinical-grade privacy and security"
     ]
+  },
+  {
+    "slug": "sage-ai-agent",
+    "title": "Sage AI Healthcare Agent",
+    "description": "Intelligent voice-first healthcare assistant available 24/7. Supports 5 languages, WebRTC and phone calls, powered by Azure OpenAI Realtime API.",
+    "image": "/image/sage.png",
+    "tags": ["Azure", "OpenAI", "WebRTC", "Next.js", "Docker"],
+    "liveDemo": "https://contact.wic-talk.com/",
+    "features": [
+      "Multilingual support: العربية, English, Français, Italiano, Deutsch",
+      "Browser calls via WebRTC",
+      "Phone call integration (inbound/outbound)",
+      "24/7 availability",
+      "Azure OpenAI Realtime API backend"
+    ]
+  },
+{
+  "slug": "wic-link",
+  "title": "Wic Link – Rocket.Chat HR & Attendance",
+  "description": "Customised Rocket.Chat installation with integrated attendance tracking and HR management system for Wic Doctor...........     ⚠️ Access restricted to internal network only (firewall IP whitelist).",
+  "image": "/image/rocket.png",
+  "tags": ["Rocket.Chat", "Docker", "Azure", "Customization", "Firewall", "Nginx"],
+  "liveDemo": "https://wic-link.com/",
+  "features": [
+    "Attendance tracking system",
+    "HR workflows (leave, requests, approvals)",
+    "Real-time team communication",
+    "Self-hosted on Azure VMs",
+    "Customised Rocket.Chat instance",
+    "Access restricted: firewall with IP whitelist for internal team use"
+  ]
 }
-
-
 ]

@@ -67,10 +67,10 @@ export default function Home() {
       <Head>
         <title>Mohamed Amine Chouchene - Portfolio</title>
         <meta name="description" content="Full Stack Developer specializing in React, Next.js, and modern web technologies" />
-        <meta property="og:image" content="/image/h1.webp" />
+        <meta property="og:image" content="/image/h2.jpeg" />
         
         {/* Preload critical resources */}
-        <link rel="preload" href="/image/h1.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/image/h2.jpeg" as="image" type="image/webp" />
       </Head>
       
       <Cursor3D />

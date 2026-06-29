@@ -40,6 +40,15 @@ html {
   }
 }
 
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient 12s ease infinite;
+}
 @keyframes bounceSoft {
   0%, 20%, 53%, 80%, 100% {
     transform: translateY(0) scale(1);
